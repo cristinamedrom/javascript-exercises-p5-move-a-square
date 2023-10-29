@@ -1,6 +1,7 @@
 let movX = 5;
 let movY = 345;
 let medRect = 50;
+let originalMovY = movY;
 let circX = 200;
 let circY = 200;
 let diametro = 100
@@ -36,7 +37,7 @@ function keyPressed() {
         movX = newMovX;
         movY = newMovY;
     }
-    
+
     background(245);
 
     fill(255, 0, 0);
