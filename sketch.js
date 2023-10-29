@@ -1,35 +1,53 @@
-let movX = 15;
-let movY = 15;
-let circX = 175;
-let circY = 175;
+let movX = 5;
+let movY = 345;
+let medRect = 50;
+let circX = 200;
+let circY = 200;
+let diametro = 100
 
 
 function setup() {
     createCanvas(400, 400);
+    background(245);
     fill(255, 0, 0);
-    rect(movX, movY, 50, 50);
-    ellipse(circX, circY, 100, 100);
+    rect(movX, movY, medRect, medRect);
+    fill(96, 121, 137)
+    ellipse(circX, circY, diametro, diametro);
 }
 
 function keyPressed() {
+
+    let newMovX = movX;
+    let newMovY = movY;
+
     if (keyCode === UP_ARROW) {
-        movY -= 5;
+        newMovY -= 5;
     } else if (keyCode === DOWN_ARROW) {
-        movY += 5;
+        newMovY += 5;
     } else if (keyCode === LEFT_ARROW) {
-        movX -= 5;
+        newMovX -= 5;
     } else if (keyCode === RIGHT_ARROW) {
-        movX += 5;
+        newMovX += 5;
+    }
+
+    let distance = dist(newMovX + medRect / 10, newMovY + medRect / 10, circX, circY);
+
+    if (distance > diametro) {
+        movX = newMovX;
+        movY = newMovY;
     }
     
-    background(255);
+    background(245);
 
+    fill(255, 0, 0);
     rect(movX, movY, 50, 50);
 
+    fill(96, 121, 137)
     ellipse(circX, circY, 100, 100);
 }
 
 
 
 function draw() {
+
 }
