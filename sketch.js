@@ -1,17 +1,15 @@
-let movX = 175;
-let movY = 175;
+let movX = 15;
+let movY = 15;
+let circX = 175;
+let circY = 175;
 
 
 function setup() {
     createCanvas(400, 400);
     fill(255, 0, 0);
     rect(movX, movY, 50, 50);
+    ellipse(circX, circY, 100, 100);
 }
-
-function draw() {
-
-}
-
 
 function keyPressed() {
     if (keyCode === UP_ARROW) {
@@ -27,4 +25,11 @@ function keyPressed() {
     background(255);
 
     rect(movX, movY, 50, 50);
+
+    ellipse(circX, circY, 100, 100);
+}
+
+
+
+function draw() {
 }
